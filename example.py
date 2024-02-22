@@ -1,36 +1,36 @@
 import random
 
 def get_user_choice():
-    user_choice = input("Выберите: камень, ножницы или бумага: ").lower()
-    while user_choice not in ['камень', 'ножницы', 'бумага']:
-        print("Неправильный выбор. Попробуйте снова.")
-        user_choice = input("Выберите: камень, ножницы или бумага: ").lower()
+    user_choice = input("Choose: rock, paper, or scissors: ").lower()
+    while user_choice not in ['rock', 'paper', 'scissors']:
+        print("Invalid choice. Please try again.")
+        user_choice = input("Choose: rock, paper, or scissors: ").lower()
     return user_choice
 
 def get_computer_choice():
-    return random.choice(['камень', 'ножницы', 'бумага'])
+    return random.choice(['rock', 'paper', 'scissors'])
 
 def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
-        return "Ничья!"
-    elif (user_choice == 'камень' and computer_choice == 'ножницы') or \
-         (user_choice == 'ножницы' and computer_choice == 'бумага') or \
-         (user_choice == 'бумага' and computer_choice == 'камень'):
-        return "Вы победили!"
+        return "It's a tie!"
+    elif (user_choice == 'rock' and computer_choice == 'scissors') or \
+         (user_choice == 'scissors' and computer_choice == 'paper') or \
+         (user_choice == 'paper' and computer_choice == 'rock'):
+        return "You win!"
     else:
-        return "Компьютер победил!"
+        return "Computer wins!"
 
 def play_game():
-    print("Добро пожаловать в игру 'Камень, ножницы, бумага'!")
+    print("Welcome to the Rock, Paper, Scissors game!")
     while True:
         user_choice = get_user_choice()
         computer_choice = get_computer_choice()
-        print("Ваш выбор:", user_choice)
-        print("Выбор компьютера:", computer_choice)
+        print("Your choice:", user_choice)
+        print("Computer's choice:", computer_choice)
         print(determine_winner(user_choice, computer_choice))
-        play_again = input("Хотите сыграть еще раз? (да/нет): ").lower()
-        if play_again != 'да':
-            print("Спасибо за игру!")
+        play_again = input("Do you want to play again? (yes/no): ").lower()
+        if play_again != 'yes':
+            print("Thanks for playing!")
             break
 
 if __name__ == "__main__":
