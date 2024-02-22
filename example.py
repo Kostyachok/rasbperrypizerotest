@@ -29,7 +29,7 @@ def play_game():
         print("Computer's choice:", computer_choice)
         print(determine_winner(user_choice, computer_choice))
         play_again = input("Do you want to play again? (yes/no): ").lower()
-        if play_again != 'yes':
+        if play_again != 'y':
             print("Thanks for playing!")
             break
 
